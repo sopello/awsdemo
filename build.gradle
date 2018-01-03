@@ -14,6 +14,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
+
 group = 'pl.mberkan.softwarecraftmanship'
 
 version = '0.0.1-SNAPSHOT'
@@ -28,3 +29,5 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
+apply from: 'gradle/docker.gradle'
