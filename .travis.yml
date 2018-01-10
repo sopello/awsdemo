@@ -15,8 +15,6 @@ install:
 
 script:
   - ./gradlew pushImage
-
-deploy:
   - ecs-cli compose --file awsdemo-compose.yml service down
   - sleep 20
   - ecs-cli compose --file awsdemo-compose.yml service up
