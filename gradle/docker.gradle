@@ -17,7 +17,7 @@ import com.bmuschko.gradle.docker.tasks.image.*
 task createDockerfile(type: Dockerfile) {
     destFile = project.file('build/Dockerfile')
     from 'openjdk:8'
-    maintainer 'Marek Berkan "mberkan@mberkan.pl"'
+    maintainer 'Michał Sopliński "sopello@sopello.pl"'
     copyFile "libs/${jar.archiveName}", "."
     defaultCommand "java", "-jar", "${jar.archiveName}"
     exposePort 8080
@@ -26,7 +26,11 @@ task createDockerfile(type: Dockerfile) {
 task buildImage(type: DockerBuildImage) {
     dependsOn createDockerfile
     inputDir = createDockerfile.destFile.parentFile
-    tag = "mberkan/${project.name}:${version}"
+    tag = "msoplinski/${project.name}:${version}"
+}
+
+task pushImage(type: DockerPushImage, dependsOn: buildImage) {
+    imageName = buildImage.tag
 }
 
 buildImage.dependsOn build

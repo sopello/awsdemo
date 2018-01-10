@@ -1,4 +1,4 @@
-package pl.mberkan.softwarecraftmanship.awsdemo.controllers;
+package pl.sopello.softwarecraftmanship.awsdemo.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

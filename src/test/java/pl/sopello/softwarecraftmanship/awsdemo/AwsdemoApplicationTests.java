@@ -1,4 +1,4 @@
-package pl.mberkan.softwarecraftmanship.awsdemo;
+package pl.sopello.softwarecraftmanship.awsdemo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
